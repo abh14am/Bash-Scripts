@@ -2,7 +2,7 @@
 #kind is a tool for running local Kubernetes clusters using Docker container “nodes”. kind was primarily designed for testing Kubernetes itself.
 
 IMAGE="kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f"
-CONFIG_FILE="config.yaml"
+CONFIG_FILE="kind-config.yaml"
 
 #check if kind is installed
 if ! command -v kind &> /dev/null; 
