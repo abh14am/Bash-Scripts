@@ -4,6 +4,23 @@
 IMAGE="kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f"
 CONFIG_FILE="config.yaml"
 
+#check if kind is installed
+if ! command -v kind &> /dev/null; 
+then
+  echo "❌ kind is not installed."
+  echo "👉 Install it from: https://kind.sigs.k8s.io/docs/user/quick-start/"
+  exit 1
+fi
+
+#check if kubectl is installed
+if ! command -v kubectl &> /dev/null; 
+then
+  echo "❌ kubectl is not installed."
+  echo "👉 Install it from: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"
+  exit 1
+fi
+
+
 read -p "Enter Kind cluster name: " CLUSTER_NAME
 
 if [ -z "$CLUSTER_NAME" ]; 
